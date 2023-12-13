@@ -28,9 +28,10 @@ export default async (req: NextRequest) => {
           { status: 401, headers: { "Content-Type": "application/json" } }
         );
       } else {
+        localStorage.setItem("username", username);
         return new NextResponse(JSON.stringify({ message: "Authorized" }), {
           status: 200,
-          headers: { "content-type": "application/json" },
+          headers: { "Content-Type": "application/json" },
         });
       }
     }

@@ -24,7 +24,7 @@ export default async (req: NextRequest) => {
     if (userExists) {
       return new NextResponse(
         JSON.stringify({ message: "User with that username already exists" }),
-        { status: 400, headers: { "content-type": "application/json" } }
+        { status: 400, headers: { "Content-Type": "application/json" } }
       );
     }
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -34,7 +34,7 @@ export default async (req: NextRequest) => {
 
     return new NextResponse(
       JSON.stringify({ message: "User successfully created" }),
-      { status: 200, headers: { "content-type": "application/json" } }
+      { status: 200, headers: { "Content-Type": "application/json" } }
     );
   }
 

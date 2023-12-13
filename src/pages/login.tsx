@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-
-const router = useRouter();
 const Login = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
 
@@ -46,6 +45,7 @@ const Login = () => {
           Password
           <input type="password" onChange={handleChange} required />
         </label>
+        <button>Submit</button>
       </form>
     </div>
   );
